@@ -175,7 +175,7 @@ class MainFrame(wx.Frame):
         window_info.SetAsChild(self.browser_panel.GetHandle(),
                                [0, 0, width, height])
         self.browser = cef.CreateBrowserSync(window_info,
-                                             url="file://C:\\Users\\diego\\Documents\\Highside\\PDFTron\\CEFPython example\\index.html")
+                                             url="file://C:\\Users\\diego\\Documents\\Highside\\PDFTron\\CEFPython example\\ceftron27\\index.html")
         self.browser.SetClientHandler(FocusHandler())
 
     def OnSetFocus(self, _):
