@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic WebViewer</title>
+    <script src="http://localhost:8080/WebViewer/lib/webviewer.min.js"></script>
+  </head>
+  
+  <body>
+    <div id='viewer' style='height: 400vh; width: 600vh'></div>
+    <script>
+      WebViewer({
+        path: 'http://localhost:8080/WebViewer/lib', // path to the PDFTron 'lib' folder on your server
+        licenseKey: 'Insert commercial license key here after purchase',
+        initialDoc: 'https://pdftron.s3.amazonaws.com/downloads/pl/webviewer-demo.pdf'
+    }, document.getElementById('viewer'))
+    .then(instance => {
+        instance.UI.setTheme('dark')
+    })
+    .catch(error => {
+      console.log("#### Error log")
+      console.log(error)
+    });
+    </script>
+  </body>
+</html>
