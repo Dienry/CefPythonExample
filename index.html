@@ -2,24 +2,29 @@
 <html>
   <head>
     <title>Basic WebViewer</title>
-    <script src="http://localhost:8080/WebViewer/lib/webviewer.min.js"></script>
+    <!--<script src="http://localhost:8080/WebViewer/lib/webviewer.min.js"></script>-->
+    <!--
+      This is a public CDN I've hosted WebViewer dependencies on, please feel
+      free to change it to any web server hosting WebViewer dependencies
+    -->
+    <script src="https://admiring-brown-c5533a.netlify.app/webviewer.min.js"></script>
   </head>
   
   <body>
     <div id='viewer' style='height: 400vh; width: 600vh'></div>
     <script>
       WebViewer({
-        path: 'http://localhost:8080/WebViewer/lib', // path to the PDFTron 'lib' folder on your server
-        licenseKey: 'Insert commercial license key here after purchase',
-        initialDoc: 'https://pdftron.s3.amazonaws.com/downloads/pl/webviewer-demo.pdf'
-    }, document.getElementById('viewer'))
-    .then(instance => {
-        instance.UI.setTheme('dark')
-    })
-    .catch(error => {
-      console.log("#### Error log")
-      console.log(error)
-    });
+        // path: "http://localhost:8080/WebViewer/lib/webviewer.min.js",
+        path: "https://admiring-brown-c5533a.netlify.app/",
+      }, document.getElementById('viewer'))
+      .then(instance => {
+          instance.UI.setTheme('dark');
+          instance.UI.loadDocument('https://pdftron.s3.amazonaws.com/downloads/pl/webviewer-demo.pdf');
+      })
+      .catch(error => {
+        console.log("#### Error log")
+        console.log(error)
+      });
     </script>
   </body>
 </html>
